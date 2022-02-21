@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "teste-unitario", "teste-uni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Financas", "Financas\Financas.csproj", "{705F366C-5E1C-472F-A247-E91A7458AC21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "financas-border-api", "financas-border-api\financas-border-api.csproj", "{6A4DC091-CEEC-40CE-99B5-944B828E25CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{705F366C-5E1C-472F-A247-E91A7458AC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{705F366C-5E1C-472F-A247-E91A7458AC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{705F366C-5E1C-472F-A247-E91A7458AC21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A4DC091-CEEC-40CE-99B5-944B828E25CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A4DC091-CEEC-40CE-99B5-944B828E25CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A4DC091-CEEC-40CE-99B5-944B828E25CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A4DC091-CEEC-40CE-99B5-944B828E25CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,7 @@ namespace financas_core
     public class DAO
     {
 
-        private const String strConnection = "Server=DESKTOP-SCVFDSG\\SQL2019A;Database=FINANCAS;User Id=lgn_financas;Password=lgn_financas;";
+        private const String strConnection = @"Server=DESKTOP-SCVFDSG\SQL2019A;Database=FINANCAS;User Id=lgn_financas;Password=lgn_financas;";
         private static SqlConnection connection = new SqlConnection(strConnection);
 
         public static SqlDataReader resultSet(String stmt)

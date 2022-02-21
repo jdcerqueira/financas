@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -13,6 +15,14 @@ namespace financas_core
         public String descricao { get; set; }
         public String tipo { get; set; }
         public CartaoCredito dadosCartao { get; set; }
+
+        public class Constantes
+        {
+            public const String tipoCartaoCredito = "cartao.credito";
+            public const String tipoDebitoConta = "debito.conta";
+            public const String tipoVoucher = "voucher";
+        }
+
 
         public class CartaoCredito
         {
@@ -62,20 +72,25 @@ namespace financas_core
             {
                 fontes.Add(new Fonte()
                 {
-                    codigo = Int32.Parse(resultado["cdFonte"].ToString()),
-                    descricao = resultado["dsFonte"].ToString(),
-                    tipo = resultado["tpFonte"].ToString(),
+                    codigo = Int32.Parse(resultado["cdFonte"].ToString().Trim()),
+                    descricao = resultado["dsFonte"].ToString().Trim(),
+                    tipo = resultado["tpFonte"].ToString().Trim(),
                     dadosCartao = new CartaoCredito()
                     {
-                        bandeira = resultado["dsBandeira"].ToString(),
-                        fechamentoFatura = Int32.Parse(resultado["diaFechamento"].ToString()),
-                        pagamentoFatura = Int32.Parse(resultado["diaFatura"].ToString())
+                        bandeira = resultado["dsBandeira"].ToString().Trim(),
+                        fechamentoFatura = Int32.Parse(resultado["diaFechamento"].ToString().Trim()),
+                        pagamentoFatura = Int32.Parse(resultado["diaFatura"].ToString().Trim())
                     }
 
                 }) ;
             }
 
             return fontes;
+        }
+
+        public static Fonte jsonToFonte(String _fontejson)
+        {
+            return JsonConvert.DeserializeObject<Fonte>(_fontejson);
         }
 
         override
